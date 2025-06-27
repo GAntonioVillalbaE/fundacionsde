@@ -1,6 +1,6 @@
-body {
+html body {
   margin: 0;
-  padding: 0;
+  width: 100%;
   overflow-x: hidden;
   font-family: Wallpoet, serif;
   background-color: #93c5bc;
@@ -13,7 +13,7 @@ body {
 .logo-container {
   height: 100%;
   display: flex;
-  align-items: center; /* Centra el logo verticalmente */
+  align-items: center;
 }
 .logo {
   height: 100%;
@@ -33,62 +33,76 @@ header {
   box-sizing: border-box;
   transition: background-color 0.3s ease-in-out;
 }
-header ul {
-  display: flex;
-  gap: 1.5rem; /* Espacio entre <li> */
-  list-style: none;
-  margin: 0;
-  padding-right: 2rem; /* ← Añadir esto */
-}
 header ul li {
-  white-space: nowrap;
-  padding: 1%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  float: left;
+  border-right: 1px solid #a37644;
 }
-.separador {
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  font-size: 1.3rem;
-}
-header .menu-toggle {
-  display: none; /* Ocultamos inicialmente */
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: 0.5rem 1rem;
-  border: 0.1rem solid #dddddd; /* Borde proporcional */
-  border-radius: 0.5rem;
-  background-color: #eeeeee;
-}
-header ul.menu-list.deplegable {
-  display: none; /* Ocultamos el menú desplegable inicialmente */
-  flex-direction: column;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background-color: white;
-  border: 0.1rem solid #dddddd;
-  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
-  z-index: 10;
-}
-header ul.menu-list.deplegable li {
-  padding: 1rem; /* Espaciado proporcional */
-  border-bottom: 0.1rem solid #dddddd;
-}
-header ul.menu-list.deplegable li:last-child {
-  border-bottom: none;
-}
-header ul.menu-list.show {
-  display: flex; /* Mostramos el menú desplegable */
-}
-ul li a {
-  color: white;
+header ul li a {
+  display: block;
+  padding: 1rem 1.5rem; /* Espaciado proporcional */
+  color: #ffffff;
   font-family: "arial", sans-serif;
+}
+
+/* Menu desplegable */
+.icon div{
+  height: 4px;
+  background-color: #ffffff;
+  margin: 4px 0;
+  border-radius: 25px;
+  transition: 0.3s;
+}
+.icon{
+  width: 30px;
+  display: block;
+  margin: 1em 0 0 1em;
+}
+.icon:hover div {
+  background-color: #a37644;
+}
+.barrasnav {
+  overflow: hidden;
+  background-color: #93c5bc;
+}
+.barrasnav a {
+  float: left;
+  display: block;
+  color: #ffffff;
   text-align: center;
-  text-wrap: no-wrap;
   text-decoration: none;
-  font-size: 1.3rem;
+}
+.barrasnav a:hover {
+  color: black;
+}
+.barrasnav a.active {
+  color: #a37644;
+}
+.barrasnav .icon {
+  display: none;
+}
+@media screen and (max-width: 800px) {
+  .barrasnav a{display: none;}
+  .barrasnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+@media screen and (max-width: 800px) {
+  .barrasnav.responsive {position: relative;}
+  .barrasnav.responsive .icon {
+    position: absolute;
+    flex-direction: column;
+    right: 0;
+    top: 0;
+  }
+  .barrasnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
 }
 
 /* Contenido */
@@ -105,7 +119,6 @@ h1 {
   font-family: "arial", cursive;
   font-size: 5em;
   font-style: normal;
-  text-shadow: -2px 1px 0px #ffffff, 2px -1px 0px #ffffff;
 }
 h2 {
   font-family: "arial", sans-serif;
@@ -227,7 +240,17 @@ button:hover {
   border-radius: 0.5rem;
 }
 
-
+/* Estilo contacto */
+li.contacto {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+.numero {
+  height: 30px;
+  hue-rotate: 90deg;
+  margin: 0.5rem;
+}
 
 
 /* Footer */
