@@ -19,6 +19,8 @@ html body {
   height: 100%;
   object-fit: contain;
 }
+
+/* Navegación */
 header {
   position: sticky;
   background: #93c5bc;
@@ -63,42 +65,42 @@ header ul li a {
 .icon:hover div {
   background-color: #a37644;
 }
-.barrasnav {
+.filasnav {
   overflow: hidden;
   background-color: #93c5bc;
 }
-.barrasnav a {
+.filasnav a {
   float: left;
   display: block;
   color: #ffffff;
   text-align: center;
   text-decoration: none;
 }
-.barrasnav a:hover {
+.filasnav a:hover {
   color: black;
 }
-.barrasnav a.active {
+.filasnav a.active {
   color: #a37644;
 }
-.barrasnav .icon {
+.filasnav .icon {
   display: none;
 }
 @media screen and (max-width: 800px) {
-  .barrasnav a{display: none;}
-  .barrasnav a.icon {
+  .topnav a:not(:first-child) {display: none;}
+  .filasnav a{display: none;}
+  .filasnav a.icon {
     float: right;
     display: block;
   }
 }
 @media screen and (max-width: 800px) {
-  .barrasnav.responsive {position: relative;}
-  .barrasnav.responsive .icon {
+  .filasnav.responsive {position: relative;}
+  .filasnav.responsive .icon {
     position: absolute;
-    flex-direction: column;
     right: 0;
     top: 0;
   }
-  .barrasnav.responsive a {
+  .filasnav.responsive a {
     float: none;
     display: block;
     text-align: left;
@@ -248,8 +250,8 @@ li.contacto {
 }
 .numero {
   height: 30px;
-  hue-rotate: 90deg;
   margin: 0.5rem;
+  filter: brightness(0.9) invert(.5) sepia(1) hue-rotate(100deg) saturate(200%);
 }
 
 
