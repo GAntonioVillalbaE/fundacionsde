@@ -23,32 +23,39 @@ html body {
 /* Navegación */
 header {
   position: sticky;
-  background: #93c5bc;
   top: 0;
   z-index: 10;
+  background-color: #93c5bc;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  padding: 1rem 5%;
   height: 15vh;
-  padding: 0 5%;
-  box-sizing: border-box;
-  transition: background-color 0.3s ease-in-out;
 }
-header ul li {
+.filasnav {
+  background-color: #93c5bc;
   list-style-type: none;
   margin: 0;
   padding: 0;
   float: left;
   border-right: 1px solid #a37644;
 }
-header ul li a {
+.filasnav a {
   display: block;
   padding: 1rem 1.5rem; /* Espaciado proporcional */
   color: #ffffff;
   font-family: "arial", sans-serif;
+  float: left;
+  text-align: center;
+  text-decoration: none;
 }
-
+.filasnav a:hover {
+  background-color: #a37644;
+  color: black;
+}
+.filasnav a.active {
+  color: #a37644;
+}
 /* Menu desplegable */
 .icon div{
   height: 4px;
@@ -59,53 +66,32 @@ header ul li a {
 }
 .icon{
   width: 30px;
-  display: block;
+  display: none;
   margin: 1em 0 0 1em;
 }
 .icon:hover div {
   background-color: #a37644;
 }
-.filasnav {
-  overflow: hidden;
-  background-color: #93c5bc;
-}
-.filasnav a {
-  float: left;
-  display: block;
-  color: #ffffff;
-  text-align: center;
-  text-decoration: none;
-}
-.filasnav a:hover {
-  color: black;
-}
-.filasnav a.active {
-  color: #a37644;
-}
+
 .filasnav .icon {
   display: none;
 }
+
+/* Oculta los enlaces y muestra el botón en móviles */
 @media screen and (max-width: 800px) {
-  .topnav a:not(:first-child) {display: none;}
-  .filasnav a{display: none;}
-  .filasnav a.icon {
-    float: right;
-    display: block;
-  }
-}
-@media screen and (max-width: 800px) {
-  .filasnav.responsive {position: relative;}
-  .filasnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
+  .filasnav a {
+    display: none;
   }
   .filasnav.responsive a {
-    float: none;
     display: block;
+    width: 100%;
     text-align: left;
   }
+  .icon {
+    display: block;
+  }
 }
+
 
 /* Contenido */
 .content {
