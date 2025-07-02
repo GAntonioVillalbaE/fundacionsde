@@ -171,6 +171,7 @@ h5{
   font-size: 1.5em;
   color: #a37644;
   font-family: "times new roman", serif;
+  letter-spacing: 2px;
 }
 p {
   color: #000000;
@@ -265,23 +266,39 @@ strong {
 }
 
 /* Estilo contacto */
+div.content ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 li.contacto {
   list-style-type: none;
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
 .numero {
   height: 35px;
   margin: 0.5rem;
-  filter: brightness(0.9) invert(.5) sepia(1) hue-rotate(100deg) saturate(200%);
+  filter: invert(47%) sepia(44%) saturate(509%) hue-rotate(351deg) brightness(94%) contrast(87%);
+}
+.numero:hover {
+  height: 50;
+  transition: all 0.3s ease;
 }
 .contacto p {
   font-size: 1em;
-  color: #000000;
-  margin-left: 0.5rem;
+  color: #a37644;
   font-family: "times new roman", serif;
 }
-
+p.metodos-contacto{
+  color: #ffffff;
+  text-align: center;
+}
+a.correo {
+  color: #a37644;
+  text-decoration: none;
+}
 /* Imagenes */
 .img-centrada {
   display: block;
