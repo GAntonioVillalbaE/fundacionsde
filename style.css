@@ -238,10 +238,11 @@ strong {
 }
 .perfil img {
   width: 100%;
-  aspect-ratio: 1 / 1; /* asegura que sea cuadrada */
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 0.5rem;
   margin-bottom: 1rem;
+  background-color: #f9f9f9;
 }
 .perfil strong {
   display: block;
