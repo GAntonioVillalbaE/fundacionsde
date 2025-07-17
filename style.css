@@ -1,3 +1,7 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 html{
   overflow-x:hidden;
   height: 100%;
@@ -12,7 +16,13 @@ html body {
   background-attachment: fixed;
   background-position: center;
 }
-
+.img-centrada {
+  display: block;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+}
 /* Cabecera */
 .logo-container {
   height: 100%;
@@ -62,6 +72,15 @@ header ul li a:hover {
 }
 header ul li a:active {
   text-decoration: underline;
+}
+header ul li a img {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+header ul li a.language-link {
+  display: none;
 }
 /* Menu desplegable movil */
 div.menu-movil-icono{
@@ -127,6 +146,9 @@ div.menu-movil-icono{
   }
   #menu-sde {
   transition: all 0.3s ease;
+  }
+  header ul li a.language-link {
+  display: inline-block;
 }
 }
 
@@ -152,6 +174,9 @@ h2 {
   padding: 2%;
   margin-left: 2%;
   font-size: 3em;
+}
+h2.gal-titulo {
+  text-align: center;
 }
 h3 {
   color: #a37644;
@@ -194,6 +219,9 @@ p, .lista-punteada li {
   color: inherit;
   margin: 0 0 1rem 0;
 }
+ul.grupo-apoyo {
+  list-style-type: square;
+}
 strong {
   display: inline;
   font-weight: bold;
@@ -201,23 +229,6 @@ strong {
 .lista-punteada {
   padding-left: 1.5rem; /* sangría para viñetas */
   margin: 0;
-}
-
-/* Imagenes */
-.galeria {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-  padding: 1rem;
-}
-.galeria img {
-  width: 100%;
-  max-width: 20rem;
-  flex: 1 1 15rem;
-  height: auto;
-  border-radius: 0.5rem;
-  object-fit: cover;
 }
 
 /* Perfiles */
@@ -300,59 +311,109 @@ a.correo {
   color: #a37644;
   text-decoration: none;
 }
+
 /* Imagenes */
-.img-centrada {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 40%;
+img {
+  max-width: 100%;
 }
-div.galeria-orden{
+/* Consecutivas */
+.galeria {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 1rem;
+  justify-content: center;
   padding: 1rem;
 }
-div.galeria {
-  border: 1px solid #cccccc;
-}
-div.galeria:hover {
-  border: 1px solid #777777;
-}
-div.galeria img {
+.galeria img {
   width: 100%;
+  max-width: 20rem;
+  flex: 1 1 15rem;
   height: auto;
+  border-radius: 0.5rem;
+  object-fit: cover;
 }
-div.desc {
-  padding: 15px;
-  text-align: center;
-}
-* {
-  box-sizing: border-box;
-}
-.responsive {
-  padding: 0 9px;
-  float: left;
-  width: 45%;
-}
+/* Galería */
+.wrapper {
+  overflow: hidden;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  grid-gap: 10px;
 
-@media only screen and (max-width: 700px) {
-  .responsive {
-    width: 49.99999%;
-    margin: 6px 0;
+  @media screen and (min-width: 1200px) {
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: auto;
   }
 }
-@media only screen and (max-width: 500px) {
-  .responsive {
-    width: 100%;
+.gal-img {
+  display: block;
+  width: 100%;
+  scroll-snap-align: start;
+  margin-bottom: 10px;
+}
+
+.gallery {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  display: flex;
+
+  @media screen and (min-width: 1200px) {
+    display: block;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
   }
 }
 
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
+.gallery__img {
+  scroll-snap-align: start;
+  margin-bottom: 10px;
+  min-width: 100vw;
+  object-fit: cover;
+
+  @media screen and (min-width: 1200px) {
+    min-width: auto;
+    min-height: 100vh;
+  }
+}
+
+.lil-nav {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  display: flex;
+  grid-row-start: 2;
+
+  @media screen and (min-width: 1200px) {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: block;
+    grid-row-start: auto;
+  }
+
+  a {
+    display: flex;
+    min-width: 45vw;
+    margin-right: 10px;
+
+    @media screen and (min-width: 1200px) {
+      margin-bottom: 10px;
+      min-height: 200px;
+      min-width: 100%;
+    }
+  }
+}
+
+.lil-nav__img {
+  object-fit: cover;
+  filter: saturate(0);
+  transition: 0.3s ease all;
+
+  &:hover {
+    transform: scale(1.05);
+    filter: saturate(1);
+  }
 }
 
 /* Footer */
