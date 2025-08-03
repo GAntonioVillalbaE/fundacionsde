@@ -10,7 +10,7 @@ html body {
   margin: 0;
   width: 100%;
   overflow-x: hidden;
-  font-family: Wallpoet, serif;
+  font-family: "Bookman Old Style", Georgia, serif;
   background-color: #93c5bc;
   background-size: auto;
   background-attachment: fixed;
@@ -163,24 +163,24 @@ div.menu-movil-icono{
 h1 {
   color: #a37644;
   text-align: center;
-  font-family: "times new roman", cursive;
+  font-family: inherit;
   font-size: 5em;
   font-style: normal;
 }
 h2 {
   color: #a37644;
-  font-family: "times new roman", serif;
+  font-family: inherit;
   margin-bottom: 5px;
   padding: 2%;
   margin-left: 2%;
-  font-size: 3em;
+  font-size: 2.5em;
 }
 h2.gal-titulo {
   text-align: center;
 }
 h3 {
   color: #a37644;
-  font-family: "times new roman", serif;
+  font-family: "Bookman Old Style", Georgia, serif;
   font-size: 2em;
   margin-bottom: 1px;
   margin-top: 0px;
@@ -188,23 +188,24 @@ h3 {
 }
 h4 {
   font-size: 1.8em;
-  color: #ffffff;
-  font-family: "times new roman", serif;
+  color: #a37644;
+  font-family: inherit;
   margin-bottom: 0px;
 }
 h5{
-  font-size: 1.5em;
-  color: #a37644;
-  font-family: "times new roman", serif;
+  font-size: 1.8em;
+  color: #ffffff;
+  font-family: inherit;
   letter-spacing: 2px;
 }
 p {
   color: #000000;
   margin-bottom: 1rem;
   text-align: justify;
-  font-family: "arial", sans-serif;
+  font-family: Tahoma, "Trebuchet MS", sans-serif;
   font-size: 1em;
   line-height: 1.5;
+  padding: 0 0 0 10%;
 }
 .content p {
   font-size: 1.5em;
@@ -278,16 +279,22 @@ strong {
 }
 
 /* Estilo contacto */
-div.content ul {
-  list-style-type: none;
+div.content {
   margin: 0;
   padding: 0;
+  text-align: center;
+}
+div.content ul {
+  list-style-type: none;
+  display: inline-block;
+  text-align: left;
 }
 li.contacto {
   list-style-type: none;
   display: flex;
   flex-direction: column;
   align-items: center;
+  display: inline-block;
 }
 .numero {
   height: 35px;
@@ -312,10 +319,95 @@ a.correo {
   text-decoration: none;
 }
 
-/* Imagenes */
-img {
-  max-width: 100%;
+/* Slideshow container */
+.slideshow-container {
+  max-width: 900px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  overflow: hidden;
 }
+/* Imagenes */
+.img-introduccion {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  background-color: #00000080;
+  font-size: 20px;
+  font-family: inherit;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+/* Number text (1/4 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+/* Hides all slides by default */
+.mySlides {
+  display: none;
+  width: 100%;
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+/* Shows the active slide */
+.mySlides.active {
+  display: block;
+  opacity: 1;
+}
+/* Dot styles */
+.dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 4px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+.dot.active {
+  background-color: #717171;
+}
+
 /* Consecutivas */
 .galeria {
   display: flex;
@@ -431,8 +523,8 @@ footer {
   align-items:center;
 }
  
- .pie-de-pagina {
-   color: darkgrey;
-   font-size: 14px;
-   margin:auto;
- }
+.pie-de-pagina {
+  color: darkgrey;
+  font-size: 14px;
+  margin:auto;
+}
