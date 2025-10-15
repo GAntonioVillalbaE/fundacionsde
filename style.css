@@ -43,7 +43,7 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 1rem 5%;
-  height: 15vh;
+  height: 120px;
   border-style: none none solid;
   border-color: #608a83;
 }
@@ -154,7 +154,7 @@ div.menu-movil-icono{
 
 /* Contenido */
 .content {
-  max-width: 90%;
+  max-width: 100%;
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -206,7 +206,7 @@ p {
   font-family: Tahoma, "Trebuchet MS", sans-serif;
   font-size: 1em;
   line-height: 1.5;
-  padding: 0 0 0 10%;
+  padding: 0 10% 0 10%;
 }
 .content p {
   font-size: 1.5em;
@@ -289,13 +289,16 @@ div.content ul {
   list-style-type: none;
   display: inline-block;
   text-align: left;
+  padding: 0;
+  margin: 0;
 }
 li.contacto {
+  align-items: center;
   list-style-type: none;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  display: inline-block;
+  padding: 0;
+  margin: 0;
 }
 .numero {
   height: 35px;
@@ -314,6 +317,8 @@ li.contacto {
 p.metodos-contacto{
   color: #ffffff;
   text-align: center;
+  padding: 0;
+  margin: 0;
 }
 a.correo {
   color: #a37644;
@@ -524,21 +529,20 @@ a.correo {
 
 /* Footer */
 footer {
-  display:flex;
-  background-color: black;
   position: relative;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
   bottom: 0;
   left: 0;
-  right: 0;
-  height: 50px;
   width: 100%;
-  border-top: 1px solid white;
-  justify-content:center;
-  align-items:center;
+  padding: 1rem 0 1rem 0;
+  background-color: black;
 }
  
 .pie-de-pagina {
   color: darkgrey;
   font-size: 14px;
   margin:auto;
+  text-align: center;
 }
